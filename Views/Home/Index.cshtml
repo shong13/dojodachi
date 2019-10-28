@@ -1,0 +1,36 @@
+﻿@model Dojodachi
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Fullness: @Model.Fullness</p>
+        <p>Happiness: @Model.Happiness</p>
+        <p>Meals: @Model.Meals</p>
+        <p>Energy: @Model.Energy</p>
+    </div>
+    <div>
+        @if(@Model.Game == true){
+            <p>@ViewBag.Message</p>
+        } else {
+            <p>@ViewBag.End</p>
+        }
+    </div>
+    <div>
+        @if(@Model.Game == true){
+            <button><a href="/feed">Feed</a></button>
+            <button><a href="/play">Play</a></button>
+            <button><a href="/work">Work</a></button>
+            <button><a href="/sleep">Sleep</a></button>
+        } else {
+            <button><a href="/restart">Restart</a></button>
+        }
+    </div>
+</body>
+</html>
